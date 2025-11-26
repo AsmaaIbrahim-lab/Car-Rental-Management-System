@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\C#\\Car_rental_system\\Car_rental_system\\Car_rental_system.csproj": {}
+    "C:\\Users\\assmai\\Desktop\\Car rental.git\\Car_rental_system\\Car_rental_system\\Car_rental_system.csproj": {}
   },
   "projects": {
-    "D:\\C#\\Car_rental_system\\Car_rental_system\\Car_rental_system.csproj": {
+    "C:\\Users\\assmai\\Desktop\\Car rental.git\\Car_rental_system\\Car_rental_system\\Car_rental_system.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\C#\\Car_rental_system\\Car_rental_system\\Car_rental_system.csproj",
+        "projectUniqueName": "C:\\Users\\assmai\\Desktop\\Car rental.git\\Car_rental_system\\Car_rental_system\\Car_rental_system.csproj",
         "projectName": "Car_rental_system",
-        "projectPath": "D:\\C#\\Car_rental_system\\Car_rental_system\\Car_rental_system.csproj",
+        "projectPath": "C:\\Users\\assmai\\Desktop\\Car rental.git\\Car_rental_system\\Car_rental_system\\Car_rental_system.csproj",
         "packagesPath": "C:\\Users\\assmai\\.nuget\\packages\\",
-        "outputPath": "D:\\C#\\Car_rental_system\\Car_rental_system\\obj\\",
+        "outputPath": "C:\\Users\\assmai\\Desktop\\Car rental.git\\Car_rental_system\\Car_rental_system\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

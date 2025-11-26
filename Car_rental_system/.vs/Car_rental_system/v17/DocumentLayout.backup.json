@@ -1,45 +1,45 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\C#\\Car_rental_system\\",
+  "WorkspaceRootPath": "C:\\Users\\assmai\\Desktop\\Car rental.git\\Car_rental_system\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{828F8FAD-7BAA-4787-B7D6-0431ADBC3757}|Car_rental_system\\Car_rental_system.csproj|d:\\c#\\car_rental_system\\car_rental_system\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{828F8FAD-7BAA-4787-B7D6-0431ADBC3757}|Car_rental_system\\Car_rental_system.csproj|c:\\users\\assmai\\desktop\\car rental.git\\car_rental_system\\car_rental_system\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{828F8FAD-7BAA-4787-B7D6-0431ADBC3757}|Car_rental_system\\Car_rental_system.csproj|solutionrelative:car_rental_system\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{828F8FAD-7BAA-4787-B7D6-0431ADBC3757}|Car_rental_system\\Car_rental_system.csproj|d:\\c#\\car_rental_system\\car_rental_system\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{828F8FAD-7BAA-4787-B7D6-0431ADBC3757}|Car_rental_system\\Car_rental_system.csproj|solutionrelative:car_rental_system\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{828F8FAD-7BAA-4787-B7D6-0431ADBC3757}|Car_rental_system\\Car_rental_system.csproj|d:\\c#\\car_rental_system\\car_rental_system\\helpers\\validation\\dofvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{828F8FAD-7BAA-4787-B7D6-0431ADBC3757}|Car_rental_system\\Car_rental_system.csproj|solutionrelative:car_rental_system\\helpers\\validation\\dofvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{828F8FAD-7BAA-4787-B7D6-0431ADBC3757}|Car_rental_system\\Car_rental_system.csproj|d:\\c#\\car_rental_system\\car_rental_system\\models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{828F8FAD-7BAA-4787-B7D6-0431ADBC3757}|Car_rental_system\\Car_rental_system.csproj|solutionrelative:car_rental_system\\models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{828F8FAD-7BAA-4787-B7D6-0431ADBC3757}|Car_rental_system\\Car_rental_system.csproj|d:\\c#\\car_rental_system\\car_rental_system\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{828F8FAD-7BAA-4787-B7D6-0431ADBC3757}|Car_rental_system\\Car_rental_system.csproj|c:\\users\\assmai\\desktop\\car rental.git\\car_rental_system\\car_rental_system\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{828F8FAD-7BAA-4787-B7D6-0431ADBC3757}|Car_rental_system\\Car_rental_system.csproj|solutionrelative:car_rental_system\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{828F8FAD-7BAA-4787-B7D6-0431ADBC3757}|Car_rental_system\\Car_rental_system.csproj|d:\\c#\\car_rental_system\\car_rental_system\\enum\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{828F8FAD-7BAA-4787-B7D6-0431ADBC3757}|Car_rental_system\\Car_rental_system.csproj|solutionrelative:car_rental_system\\enum\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{828F8FAD-7BAA-4787-B7D6-0431ADBC3757}|Car_rental_system\\Car_rental_system.csproj|c:\\users\\assmai\\desktop\\car rental.git\\car_rental_system\\car_rental_system\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{828F8FAD-7BAA-4787-B7D6-0431ADBC3757}|Car_rental_system\\Car_rental_system.csproj|solutionrelative:car_rental_system\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{828F8FAD-7BAA-4787-B7D6-0431ADBC3757}|Car_rental_system\\Car_rental_system.csproj|d:\\c#\\car_rental_system\\car_rental_system\\models\\carowner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{828F8FAD-7BAA-4787-B7D6-0431ADBC3757}|Car_rental_system\\Car_rental_system.csproj|solutionrelative:car_rental_system\\models\\carowner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{828F8FAD-7BAA-4787-B7D6-0431ADBC3757}|Car_rental_system\\Car_rental_system.csproj|d:\\c#\\car_rental_system\\car_rental_system\\models\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{828F8FAD-7BAA-4787-B7D6-0431ADBC3757}|Car_rental_system\\Car_rental_system.csproj|solutionrelative:car_rental_system\\models\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{828F8FAD-7BAA-4787-B7D6-0431ADBC3757}|Car_rental_system\\Car_rental_system.csproj|d:\\c#\\car_rental_system\\car_rental_system\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{828F8FAD-7BAA-4787-B7D6-0431ADBC3757}|Car_rental_system\\Car_rental_system.csproj|c:\\users\\assmai\\desktop\\car rental.git\\car_rental_system\\car_rental_system\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{828F8FAD-7BAA-4787-B7D6-0431ADBC3757}|Car_rental_system\\Car_rental_system.csproj|solutionrelative:car_rental_system\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{828F8FAD-7BAA-4787-B7D6-0431ADBC3757}|Car_rental_system\\Car_rental_system.csproj|d:\\c#\\car_rental_system\\car_rental_system\\data\\migrations\\20251115183329_createauthdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{828F8FAD-7BAA-4787-B7D6-0431ADBC3757}|Car_rental_system\\Car_rental_system.csproj|c:\\users\\assmai\\desktop\\car rental.git\\car_rental_system\\car_rental_system\\models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{828F8FAD-7BAA-4787-B7D6-0431ADBC3757}|Car_rental_system\\Car_rental_system.csproj|solutionrelative:car_rental_system\\models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{828F8FAD-7BAA-4787-B7D6-0431ADBC3757}|Car_rental_system\\Car_rental_system.csproj|c:\\users\\assmai\\desktop\\car rental.git\\car_rental_system\\car_rental_system\\helpers\\validation\\dofvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{828F8FAD-7BAA-4787-B7D6-0431ADBC3757}|Car_rental_system\\Car_rental_system.csproj|solutionrelative:car_rental_system\\helpers\\validation\\dofvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{828F8FAD-7BAA-4787-B7D6-0431ADBC3757}|Car_rental_system\\Car_rental_system.csproj|c:\\users\\assmai\\desktop\\car rental.git\\car_rental_system\\car_rental_system\\enum\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{828F8FAD-7BAA-4787-B7D6-0431ADBC3757}|Car_rental_system\\Car_rental_system.csproj|solutionrelative:car_rental_system\\enum\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{828F8FAD-7BAA-4787-B7D6-0431ADBC3757}|Car_rental_system\\Car_rental_system.csproj|c:\\users\\assmai\\desktop\\car rental.git\\car_rental_system\\car_rental_system\\models\\carowner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{828F8FAD-7BAA-4787-B7D6-0431ADBC3757}|Car_rental_system\\Car_rental_system.csproj|solutionrelative:car_rental_system\\models\\carowner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{828F8FAD-7BAA-4787-B7D6-0431ADBC3757}|Car_rental_system\\Car_rental_system.csproj|c:\\users\\assmai\\desktop\\car rental.git\\car_rental_system\\car_rental_system\\models\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{828F8FAD-7BAA-4787-B7D6-0431ADBC3757}|Car_rental_system\\Car_rental_system.csproj|solutionrelative:car_rental_system\\models\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{828F8FAD-7BAA-4787-B7D6-0431ADBC3757}|Car_rental_system\\Car_rental_system.csproj|c:\\users\\assmai\\desktop\\car rental.git\\car_rental_system\\car_rental_system\\data\\migrations\\20251115183329_createauthdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{828F8FAD-7BAA-4787-B7D6-0431ADBC3757}|Car_rental_system\\Car_rental_system.csproj|solutionrelative:car_rental_system\\data\\migrations\\20251115183329_createauthdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -56,9 +56,9 @@
               "$type": "Document",
               "DocumentIndex": 9,
               "Title": "20251115183329_CreateAuthDB.cs",
-              "DocumentMoniker": "D:\\C#\\Car_rental_system\\Car_rental_system\\Data\\Migrations\\20251115183329_CreateAuthDB.cs",
+              "DocumentMoniker": "C:\\Users\\assmai\\Desktop\\Car rental.git\\Car_rental_system\\Car_rental_system\\Data\\Migrations\\20251115183329_CreateAuthDB.cs",
               "RelativeDocumentMoniker": "Car_rental_system\\Data\\Migrations\\20251115183329_CreateAuthDB.cs",
-              "ToolTip": "D:\\C#\\Car_rental_system\\Car_rental_system\\Data\\Migrations\\20251115183329_CreateAuthDB.cs",
+              "ToolTip": "C:\\Users\\assmai\\Desktop\\Car rental.git\\Car_rental_system\\Car_rental_system\\Data\\Migrations\\20251115183329_CreateAuthDB.cs",
               "RelativeToolTip": "Car_rental_system\\Data\\Migrations\\20251115183329_CreateAuthDB.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -66,11 +66,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Role.cs",
-              "DocumentMoniker": "D:\\C#\\Car_rental_system\\Car_rental_system\\Enum\\Role.cs",
+              "DocumentMoniker": "C:\\Users\\assmai\\Desktop\\Car rental.git\\Car_rental_system\\Car_rental_system\\Enum\\Role.cs",
               "RelativeDocumentMoniker": "Car_rental_system\\Enum\\Role.cs",
-              "ToolTip": "D:\\C#\\Car_rental_system\\Car_rental_system\\Enum\\Role.cs",
+              "ToolTip": "C:\\Users\\assmai\\Desktop\\Car rental.git\\Car_rental_system\\Car_rental_system\\Enum\\Role.cs",
               "RelativeToolTip": "Car_rental_system\\Enum\\Role.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -80,34 +80,35 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\C#\\Car_rental_system\\Car_rental_system\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\assmai\\Desktop\\Car rental.git\\Car_rental_system\\Car_rental_system\\Program.cs",
               "RelativeDocumentMoniker": "Car_rental_system\\Program.cs",
-              "ToolTip": "D:\\C#\\Car_rental_system\\Car_rental_system\\Program.cs",
+              "ToolTip": "C:\\Users\\assmai\\Desktop\\Car rental.git\\Car_rental_system\\Car_rental_system\\Program.cs",
               "RelativeToolTip": "Car_rental_system\\Program.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAADgAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-15T17:16:26.392Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\C#\\Car_rental_system\\Car_rental_system\\appsettings.json",
+              "DocumentMoniker": "C:\\Users\\assmai\\Desktop\\Car rental.git\\Car_rental_system\\Car_rental_system\\appsettings.json",
               "RelativeDocumentMoniker": "Car_rental_system\\appsettings.json",
-              "ToolTip": "D:\\C#\\Car_rental_system\\Car_rental_system\\appsettings.json",
+              "ToolTip": "C:\\Users\\assmai\\Desktop\\Car rental.git\\Car_rental_system\\Car_rental_system\\appsettings.json",
               "RelativeToolTip": "Car_rental_system\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAB8AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-15T17:04:18.387Z"
+              "WhenOpened": "2025-11-15T17:04:18.387Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "CarOwner.cs",
-              "DocumentMoniker": "D:\\C#\\Car_rental_system\\Car_rental_system\\Models\\CarOwner.cs",
+              "DocumentMoniker": "C:\\Users\\assmai\\Desktop\\Car rental.git\\Car_rental_system\\Car_rental_system\\Models\\CarOwner.cs",
               "RelativeDocumentMoniker": "Car_rental_system\\Models\\CarOwner.cs",
-              "ToolTip": "D:\\C#\\Car_rental_system\\Car_rental_system\\Models\\CarOwner.cs",
+              "ToolTip": "C:\\Users\\assmai\\Desktop\\Car rental.git\\Car_rental_system\\Car_rental_system\\Models\\CarOwner.cs",
               "RelativeToolTip": "Car_rental_system\\Models\\CarOwner.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -115,11 +116,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Admin.cs",
-              "DocumentMoniker": "D:\\C#\\Car_rental_system\\Car_rental_system\\Models\\Admin.cs",
+              "DocumentMoniker": "C:\\Users\\assmai\\Desktop\\Car rental.git\\Car_rental_system\\Car_rental_system\\Models\\Admin.cs",
               "RelativeDocumentMoniker": "Car_rental_system\\Models\\Admin.cs",
-              "ToolTip": "D:\\C#\\Car_rental_system\\Car_rental_system\\Models\\Admin.cs",
+              "ToolTip": "C:\\Users\\assmai\\Desktop\\Car rental.git\\Car_rental_system\\Car_rental_system\\Models\\Admin.cs",
               "RelativeToolTip": "Car_rental_system\\Models\\Admin.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -127,51 +128,55 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 3,
               "Title": "Customer.cs",
-              "DocumentMoniker": "D:\\C#\\Car_rental_system\\Car_rental_system\\Models\\Customer.cs",
+              "DocumentMoniker": "C:\\Users\\assmai\\Desktop\\Car rental.git\\Car_rental_system\\Car_rental_system\\Models\\Customer.cs",
               "RelativeDocumentMoniker": "Car_rental_system\\Models\\Customer.cs",
-              "ToolTip": "D:\\C#\\Car_rental_system\\Car_rental_system\\Models\\Customer.cs",
+              "ToolTip": "C:\\Users\\assmai\\Desktop\\Car rental.git\\Car_rental_system\\Car_rental_system\\Models\\Customer.cs",
               "RelativeToolTip": "Car_rental_system\\Models\\Customer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAkAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-15T15:39:16.023Z"
+              "WhenOpened": "2025-11-15T15:39:16.023Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DOFValidation.cs",
+              "DocumentMoniker": "C:\\Users\\assmai\\Desktop\\Car rental.git\\Car_rental_system\\Car_rental_system\\Helpers\\Validation\\DOFValidation.cs",
+              "RelativeDocumentMoniker": "Car_rental_system\\Helpers\\Validation\\DOFValidation.cs",
+              "ToolTip": "C:\\Users\\assmai\\Desktop\\Car rental.git\\Car_rental_system\\Car_rental_system\\Helpers\\Validation\\DOFValidation.cs",
+              "RelativeToolTip": "Car_rental_system\\Helpers\\Validation\\DOFValidation.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAAAsAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T21:12:38.565Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Users.cs",
+              "DocumentMoniker": "C:\\Users\\assmai\\Desktop\\Car rental.git\\Car_rental_system\\Car_rental_system\\Models\\Users.cs",
+              "RelativeDocumentMoniker": "Car_rental_system\\Models\\Users.cs",
+              "ToolTip": "C:\\Users\\assmai\\Desktop\\Car rental.git\\Car_rental_system\\Car_rental_system\\Models\\Users.cs",
+              "RelativeToolTip": "Car_rental_system\\Models\\Users.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAiwEAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T18:38:33.7Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "DOFValidation.cs",
-              "DocumentMoniker": "D:\\C#\\Car_rental_system\\Car_rental_system\\Helpers\\Validation\\DOFValidation.cs",
-              "RelativeDocumentMoniker": "Car_rental_system\\Helpers\\Validation\\DOFValidation.cs",
-              "ToolTip": "D:\\C#\\Car_rental_system\\Car_rental_system\\Helpers\\Validation\\DOFValidation.cs",
-              "RelativeToolTip": "Car_rental_system\\Helpers\\Validation\\DOFValidation.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T21:12:38.565Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Users.cs",
-              "DocumentMoniker": "D:\\C#\\Car_rental_system\\Car_rental_system\\Models\\Users.cs",
-              "RelativeDocumentMoniker": "Car_rental_system\\Models\\Users.cs",
-              "ToolTip": "D:\\C#\\Car_rental_system\\Car_rental_system\\Models\\Users.cs",
-              "RelativeToolTip": "Car_rental_system\\Models\\Users.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAmwCAAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T18:38:33.7Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "D:\\C#\\Car_rental_system\\Car_rental_system\\Data\\ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\assmai\\Desktop\\Car rental.git\\Car_rental_system\\Car_rental_system\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "Car_rental_system\\Data\\ApplicationDbContext.cs",
-              "ToolTip": "D:\\C#\\Car_rental_system\\Car_rental_system\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\assmai\\Desktop\\Car rental.git\\Car_rental_system\\Car_rental_system\\Data\\ApplicationDbContext.cs",
               "RelativeToolTip": "Car_rental_system\\Data\\ApplicationDbContext.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAA0wCwAAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T18:15:48.342Z"
+              "WhenOpened": "2025-11-13T18:15:48.342Z",
+              "EditorCaption": ""
             }
           ]
         }
