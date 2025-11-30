@@ -794,11 +794,15 @@
           "gender": {
             "$ref": "#/components/schemas/Gender"
           },
-          "imageUrl": {
+          "licenseNumber": {
             "type": "string",
             "nullable": true
           },
-          "lisenceImageUrl": {
+          "expiryDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "licenseType": {
             "type": "string",
             "nullable": true
           },
@@ -810,10 +814,6 @@
             "$ref": "#/components/schemas/City"
           },
           "country": {
-            "type": "string",
-            "nullable": true
-          },
-          "licenseNumber": {
             "type": "string",
             "nullable": true
           },

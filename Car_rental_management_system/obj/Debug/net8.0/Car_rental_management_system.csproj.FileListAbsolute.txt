@@ -153,3 +153,4 @@ D:\C#\Car_rental_management_system\Car_rental_management_system\bin\Debug\net8.0
 D:\C#\Car_rental_management_system\Car_rental_management_system\bin\Debug\net8.0\Castle.Core.dll
 D:\C#\Car_rental_management_system\Car_rental_management_system\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Proxies.dll
 D:\C#\Car_rental_management_system\Car_rental_management_system\bin\Debug\net8.0\Car_rental_management_system.staticwebassets.runtime.json
+D:\C#\Car_rental_management_system\Car_rental_management_system\obj\Debug\net8.0\Car_rental_management_system.sourcelink.json

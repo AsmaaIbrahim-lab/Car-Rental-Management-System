@@ -18,8 +18,11 @@ namespace Car_rental_management_system.ViewModel
         public DateOnly DateOfBirth { get; set; }
 
         public Gender gender { get; set; }
-        public string? ImageUrl { get; set; }
-        public string? LisenceImageUrl { get; set; }
+        public string LicenseNumber { get; set; }
+
+        public DateOnly ExpiryDate { get; set; }
+
+        public string LicenseType { get; set; }
 
 
         public string PhoneNumber { get; set; }
@@ -28,7 +31,6 @@ namespace Car_rental_management_system.ViewModel
         public string Country { get; set; } = "Egypt";
 
        
-        public string LicenseNumber { get; set; }
 
         public Role Role { get; set; }
     }

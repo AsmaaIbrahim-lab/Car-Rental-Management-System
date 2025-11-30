@@ -75,8 +75,8 @@ namespace Car_rental_management_system
             app.MapIdentityApi<Users>();
             app.MapGroup("/api")
                 .MapIdentityUserEndpoint(builder.Configuration);
-              //  .MapAccountEndpoints();
-
+            //  .MapAccountEndpoints();
+            
             app.MapControllers();
 
             app.Run();

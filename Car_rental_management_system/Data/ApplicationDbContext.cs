@@ -28,7 +28,7 @@ namespace Car_rental_system.Data
         {
             base.OnModelCreating(builder);
 
-            builder.Entity<Users>(L =>L.Property(u => u.LicenseNumber)
+            builder.Entity<Users>(L => L.Property(u => u.LicenseNumber)
                         .IsRequired());
             builder.Entity<Users>()
                 .HasOne(u => u.customer)
