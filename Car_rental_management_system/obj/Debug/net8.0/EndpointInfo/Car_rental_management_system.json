@@ -463,6 +463,41 @@
         }
       }
     },
+    "/api/Cars/Get": {
+      "get": {
+        "tags": [
+          "Cars"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Cars/Get{id}": {
+      "get": {
+        "tags": [
+          "Cars"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/SignUp": {
       "post": {
         "tags": [
@@ -557,48 +592,46 @@
       },
       "CarStatus": {
         "enum": [
-          0,
-          1
+          "Available",
+          "Unavailable"
         ],
-        "type": "integer",
-        "format": "int32"
+        "type": "string"
       },
       "City": {
         "enum": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9,
-          10,
-          11,
-          12,
-          13,
-          14,
-          15,
-          16,
-          17,
-          18,
-          19,
-          20,
-          21,
-          22,
-          23,
-          24,
-          25,
-          26,
-          27,
-          28,
-          29,
-          30
+          "Cairo",
+          "Alexandria",
+          "Giza",
+          "Luxor",
+          "Aswan",
+          "Suez",
+          "PortSaid",
+          "Ismailia",
+          "SharmElSheikh",
+          "Hurghada",
+          "Tanta",
+          "Mansoura",
+          "Zagazig",
+          "Damanhour",
+          "Asyut",
+          "Sohag",
+          "Minya",
+          "BeniSuef",
+          "Fayoum",
+          "KafrElSheikh",
+          "Damietta",
+          "Qena",
+          "Matrouh",
+          "RedSea",
+          "NorthSinai",
+          "SouthSinai",
+          "Qalyubia",
+          "Monufia",
+          "Beheira",
+          "Sharqia",
+          "Gharbia"
         ],
-        "type": "integer",
-        "format": "int32"
+        "type": "string"
       },
       "ForgotPasswordRequest": {
         "required": [
@@ -615,11 +648,10 @@
       },
       "Gender": {
         "enum": [
-          1,
-          2
+          "Male",
+          "Female"
         ],
-        "type": "integer",
-        "format": "int32"
+        "type": "string"
       },
       "HttpValidationProblemDetails": {
         "type": "object",
@@ -660,11 +692,10 @@
       },
       "ImageType": {
         "enum": [
-          0,
-          1
+          "Image_before_rental",
+          "Image_after_rental"
         ],
-        "type": "integer",
-        "format": "int32"
+        "type": "string"
       },
       "InfoRequest": {
         "type": "object",
@@ -861,12 +892,11 @@
       },
       "Role": {
         "enum": [
-          1,
-          2,
-          3
+          "Customer",
+          "CarOwner",
+          "Admin"
         ],
-        "type": "integer",
-        "format": "int32"
+        "type": "string"
       },
       "TwoFactorRequest": {
         "type": "object",

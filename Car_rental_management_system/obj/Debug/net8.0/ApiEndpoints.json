@@ -66,6 +66,32 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Car_rental_management_system.Controllers.CarsController",
+    "Method": "GetAllCars",
+    "RelativePath": "api/Cars/Get",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Car_rental_management_system.Controllers.CarsController",
+    "Method": "GetCarByID",
+    "RelativePath": "api/Cars/Get{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Car_rental_management_system.Controllers.IdentityUserEndpoint",
     "Method": "CreateUser",
     "RelativePath": "api/SignUp",

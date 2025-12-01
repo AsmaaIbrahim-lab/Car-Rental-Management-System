@@ -40,6 +40,7 @@ namespace Car_rental_management_system.Models
         public string Location { get; set; }
 
         public int OwnerId { get; set; }      
+        public string Description { get; set; }
         public  virtual CarOwner Owner { get; set; }
         public int? AdminId { get; set; } 
         public string Type { get; set; }
@@ -49,6 +50,7 @@ namespace Car_rental_management_system.Models
         public int? PlanId { get; set; }
 
         public virtual PricingPlan Plan { get; set; }
+        
 
 
 

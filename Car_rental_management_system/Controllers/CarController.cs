@@ -1,8 +1,12 @@
 ﻿using Car_rental_management_system.DTOs;
 using Car_rental_management_system.Models;
 using Car_rental_system.Data;
+using Car_rental_system.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Identity.Client;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Car_rental_management_system.Controllers
 {
@@ -94,7 +98,64 @@ namespace Car_rental_management_system.Controllers
                 })
             });
         }
-      
+
+        [HttpGet("Get")]
+        public async Task<IActionResult> GetAllCars()
+        {
+              
+            var cars = await _db.Cars
+                .Include(c => c.Plan)   
+                .ToListAsync();
+
+            var result = cars.Select(car => new CarsGetDTO
+            {
+                Id = car.CarId,
+                Model = car.Model,
+                Status = car.Status,
+                Color = car.Color,
+                Type = car.Type,
+                PricingPlan = new PricingPlanDTO
+                {
+                    PricePerUnit = car.Plan.PricePerUnit,
+                    Plan_type = car.Plan.Plan_type
+                },
+
+            });
+
+            return Ok(result);
+        }
+
+        [HttpGet("Get{id:int}")]
+        public async Task<IActionResult> GetCarByID( int id )
+        {
+
+            var cars = await _db.Cars
+                .Include(c => c.Plan)
+                .ToListAsync();
+
+            var result = cars.Select(car => new CarsGetDTOById
+            {
+                Id = car.CarId,
+                Model = car.Model,
+                Status = car.Status,
+                Color = car.Color,
+                Type = car.Type,
+                Describtion = car.Description,
+                PricingPlan = new PricingPlanDTO
+                {
+                    PricePerUnit = car.Plan.PricePerUnit,
+                    Plan_type = car.Plan.Plan_type
+                }
+            });
+
+           var Result= result.FirstOrDefault(result => result.Id==id);
+            return Ok(Result);
+        }
+
+
+
+
+
 
 
     }
