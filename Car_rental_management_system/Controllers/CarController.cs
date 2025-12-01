@@ -1,4 +1,5 @@
 ﻿using Car_rental_management_system.DTOs;
+using Car_rental_management_system.Enum;
 using Car_rental_management_system.Models;
 using Car_rental_system.Data;
 using Car_rental_system.Models;
@@ -7,7 +8,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Client;
 using static System.Net.Mime.MediaTypeNames;
-
 namespace Car_rental_management_system.Controllers
 {
     [ApiController]
@@ -152,7 +152,199 @@ namespace Car_rental_management_system.Controllers
             return Ok(Result);
         }
 
+        [HttpGet("GetImages/{id:int}")]
+        public async Task<IActionResult> GetCarImages(int id)
+        {
+            var car = await _db.Cars
+                .Include(c => c.CarImages)
+                .FirstOrDefaultAsync(c => c.CarId == id);
 
+            if (car == null)
+                return NotFound("Car not found");
+
+            var result = new CarImageDTO
+            {
+                Id = car.CarId,
+                ImagePath = car.CarImages.Select(i => i.ImagePath).ToList()
+            };
+
+            return Ok(result);
+        }
+        [HttpGet("GetOneImage/{id:int}")]
+        public async Task<IActionResult> GetCarImage(int id)
+        {
+            var car = await _db.Cars
+                .Include(c => c.CarImages)
+                .FirstOrDefaultAsync(c => c.CarId == id);
+
+            if (car == null)
+                return NotFound("Car not found");
+
+            var result = new CarOneImageDTO
+            {
+                Id = car.CarId,
+                ImagePath = car.CarImages.Select(i => i.ImagePath).FirstOrDefault()
+            };
+
+            return Ok(result);
+        }
+        [HttpGet("FilterByAvailability")]
+        public async Task<IActionResult> FilterByAvailability( string status)
+        {
+
+            var cars = await _db.Cars
+                .Include(c => c.Plan)
+                .ToListAsync();
+
+            var result = cars.Select(car => new CarsGetDTO
+            {
+                Id = car.CarId,
+                Model = car.Model,
+                Status = car.Status,
+                Color = car.Color,
+                Type = car.Type,
+                PricingPlan = new PricingPlanDTO
+                {
+                    PricePerUnit = car.Plan.PricePerUnit,
+                    Plan_type = car.Plan.Plan_type
+                },
+
+            });
+            var parsedStatus = System.Enum.Parse<CarStatus>(status, true);
+
+            var Result = result.Where(result => result.Status == parsedStatus);
+            return Ok(Result);
+            
+        }
+        [HttpGet("FilterByColor")]
+        public async Task<IActionResult> GetCarByColor(string color)
+        {
+
+            var cars = await _db.Cars
+                .Include(c => c.Plan)
+                .ToListAsync();
+
+            var result = cars.Select(car => new CarsGetDTO
+            {
+                Id = car.CarId,
+                Model = car.Model,
+                Status = car.Status,
+                Color = car.Color,
+                Type = car.Type,
+                PricingPlan = new PricingPlanDTO
+                {
+                    PricePerUnit = car.Plan.PricePerUnit,
+                    Plan_type = car.Plan.Plan_type
+                },
+
+            });
+        
+
+            var Result = result.Where(result => result.Color.ToLower() == color);
+            return Ok(Result);
+
+        }
+        [HttpGet("FilterByType")]
+        public async Task<IActionResult> GetCarByType(string type)
+        {
+
+            var cars = await _db.Cars
+                .Include(c => c.Plan)
+                .ToListAsync();
+
+            var result = cars.Select(car => new CarsGetDTO
+            {
+                Id = car.CarId,
+                Model = car.Model,
+                Status = car.Status,
+                Color = car.Color,
+                Type = car.Type,
+                PricingPlan = new PricingPlanDTO
+                {
+                    PricePerUnit = car.Plan.PricePerUnit,
+                    Plan_type = car.Plan.Plan_type
+                },
+
+            });
+
+
+            var Result = result.Where(result => result.Type.ToLower() == type);
+            return Ok(Result);
+
+        }
+        [HttpGet("FilterByPrice")]
+        public async Task<IActionResult> GetCarByPrice(double price)
+        {
+
+            var cars = await _db.Cars
+                .Include(c => c.Plan)
+                .ToListAsync();
+
+            var result = cars.Select(car => new CarsGetDTO
+            {
+                Id = car.CarId,
+                Model = car.Model,
+                Status = car.Status,
+                Color = car.Color,
+                Type = car.Type,
+                PricingPlan = new PricingPlanDTO
+                {
+                    PricePerUnit = car.Plan.PricePerUnit,
+                    Plan_type = car.Plan.Plan_type
+                },
+
+            });
+
+            var Result = result.Where(result => result.PricingPlan.PricePerUnit == price);
+            return Ok(Result);
+
+        }
+        [HttpGet("FilterByPlan_type")]
+        public async Task<IActionResult> GetCarByPlan_type(string plan_type)
+        {
+
+            var cars = await _db.Cars
+                .Include(c => c.Plan)
+                .ToListAsync();
+
+            var result = cars.Select(car => new CarsGetDTO
+            {
+                Id = car.CarId,
+                Model = car.Model,
+                Status = car.Status,
+                Color = car.Color,
+                Type = car.Type,
+                PricingPlan = new PricingPlanDTO
+                {
+                    PricePerUnit = car.Plan.PricePerUnit,
+                    Plan_type = car.Plan.Plan_type
+                },
+
+            });
+            var parsedPlan_type = System.Enum.Parse<plan_type>(plan_type, true);
+
+            var Result = result.Where(result => result.PricingPlan.Plan_type == parsedPlan_type);
+
+            return Ok(Result);
+
+        }
+        //[HttpGet("CheckAvailability{id:int}")]
+        //public async Task<IActionResult> CheckAvailability(int id)
+        //{
+
+        //    var cars = await _db.Cars
+        //        .Include(c => c.Plan)
+        //        .ToListAsync();
+
+        //    var result = cars.Select(car => new CheckCarAvaialbilityDTO
+        //    {
+        //        Status = car.Status,
+               
+        //    });
+
+        //    var Result = result.FirstOrDefault(result => result.Id == id);
+        //    return Ok(Result);
+        //}
 
 
 

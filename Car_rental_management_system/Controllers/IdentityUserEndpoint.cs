@@ -22,6 +22,8 @@ namespace Car_rental_management_system.Controllers
             app.MapPost("/SignUp", CreateUser);
             app.MapPost("/UserLogin", (UserManager<Users> um, LoginModel m)
                 => LoginUser(um, m, config));
+            app.MapPost("/Logout", LogoutUser)
+         .RequireAuthorization();
 
             return app;
         }
@@ -102,8 +104,11 @@ namespace Car_rental_management_system.Controllers
                     Subject = new ClaimsIdentity(new[]
                     {
                         new Claim("UserID", user.Id.ToString()),
+
                     }),
                     Expires = DateTime.UtcNow.AddHours(1),
+                    Issuer = config["JwtIssuer"],      
+                    Audience = config["JwtAudience"],
                     SigningCredentials = new SigningCredentials(
                         key,
                         SecurityAlgorithms.HmacSha256Signature)
@@ -127,6 +132,34 @@ namespace Car_rental_management_system.Controllers
 
             return Results.BadRequest(new { message = "خطأ فى تسجيل الدخول" });
         }
+        [Authorize]
+        public static async Task<IResult> LogoutUser(
+    HttpContext context,
+    SignInManager<Users> signInManager)
+        {
+            try
+            {
+                await signInManager.SignOutAsync();
+
+                context.Response.Cookies.Delete(".AspNetCore.Identity.Application");
+
+                return Results.Ok(new
+                {
+                    message = "تم تسجيل الخروج بنجاح",
+                    success = true,
+                    timestamp = DateTime.UtcNow
+                });
+            }
+            catch (Exception ex)
+            {
+                return Results.Problem(
+                    detail: ex.Message,
+                    title: "حدث خطأ أثناء تسجيل الخروج",
+                    statusCode: StatusCodes.Status500InternalServerError
+                );
+            }
+        }
+
     }
 }
 

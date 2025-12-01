@@ -4,7 +4,8 @@ namespace Car_rental_management_system.DTOs
 {
     public class CarImageDTO
     {   
-        public string ImagePath { get; set; }
-        public ImageType ImageType { get; set; }
+        public int Id { get; set; }
+        public List<string> ImagePath { get; set; }
+
     }
 }

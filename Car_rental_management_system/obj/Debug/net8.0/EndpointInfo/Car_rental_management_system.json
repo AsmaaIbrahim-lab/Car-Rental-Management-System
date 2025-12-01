@@ -498,6 +498,181 @@
         }
       }
     },
+    "/api/Cars/GetImages/{id}": {
+      "get": {
+        "tags": [
+          "Cars"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Cars/GetOneImage/{id}": {
+      "get": {
+        "tags": [
+          "Cars"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Cars/FilterByAvailability": {
+      "get": {
+        "tags": [
+          "Cars"
+        ],
+        "parameters": [
+          {
+            "name": "status",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Cars/FilterByColor": {
+      "get": {
+        "tags": [
+          "Cars"
+        ],
+        "parameters": [
+          {
+            "name": "color",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Cars/FilterByType": {
+      "get": {
+        "tags": [
+          "Cars"
+        ],
+        "parameters": [
+          {
+            "name": "type",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Cars/FilterByPrice": {
+      "get": {
+        "tags": [
+          "Cars"
+        ],
+        "parameters": [
+          {
+            "name": "price",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Cars/FilterByPlan_type": {
+      "get": {
+        "tags": [
+          "Cars"
+        ],
+        "parameters": [
+          {
+            "name": "plan_type",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Cars/CheckAvailability{id}": {
+      "get": {
+        "tags": [
+          "Cars"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/SignUp": {
       "post": {
         "tags": [
@@ -513,6 +688,18 @@
           },
           "required": true
         },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Logout": {
+      "post": {
+        "tags": [
+          "IdentityUserEndpoint"
+        ],
         "responses": {
           "200": {
             "description": "OK"

@@ -47,8 +47,11 @@ namespace Car_rental_management_system.Extensions
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(
                         Encoding.UTF8.GetBytes(config["JwtKey"]!)),
-                   // ValidateIssuer = false,
-                   // ValidateAudience = false,
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidIssuer = config["JwtIssuer"],
+                    ValidAudience = config["JwtAudience"],
+                   
                 };
             });
 
