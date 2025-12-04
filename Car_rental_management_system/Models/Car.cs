@@ -10,7 +10,7 @@ namespace Car_rental_management_system.Models
     {
         [Key]
         public int CarId { get; set; }
-        [Required(ErrorMessage = "Status is required.")]
+      
         public CarStatus Status { get; set; }
 
 
@@ -39,10 +39,10 @@ namespace Car_rental_management_system.Models
         [StringLength(100, ErrorMessage = "Location must not exceed 100 characters.")]
         public string Location { get; set; }
 
-        public int OwnerId { get; set; }      
+        public string? CarOwnerId { get; set; }      
         public string Description { get; set; }
         public  virtual CarOwner Owner { get; set; }
-        public int? AdminId { get; set; } 
+        public string? AdminId { get; set; } 
         public string Type { get; set; }
         public virtual Admin Admin { get; set; }
         public virtual List<Car_CarImage> CarImages { get; set; }
@@ -50,7 +50,8 @@ namespace Car_rental_management_system.Models
         public int? PlanId { get; set; }
 
         public virtual PricingPlan Plan { get; set; }
-        
+        public virtual List<Reservation> Reservtions { get; set; }
+
 
 
 

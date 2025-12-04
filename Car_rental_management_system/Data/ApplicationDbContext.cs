@@ -20,6 +20,7 @@ namespace Car_rental_system.Data
         public DbSet<Car> Cars { get; set; }
         public DbSet<Car_CarImage> Car_Image { get; set; }
         public DbSet<PricingPlan> Plans { get; set; }
+        public DbSet<Reservation> Reservations { get; set; }
 
 
 
@@ -27,28 +28,53 @@ namespace Car_rental_system.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+            builder.Entity<Customer>(entity =>
+            {
+                entity.HasKey(e => e.CustomerId);
+
+                entity.Property(e => e.CustomerId)
+                      .ValueGeneratedNever();   
+            });
+            builder.Entity<Admin>(entity =>
+            {
+                entity.HasKey(e => e.AdminId);
+
+                entity.Property(e => e.AdminId)
+                      .ValueGeneratedNever();
+            });
+            builder.Entity<CarOwner>(entity =>
+            {
+                entity.HasKey(e => e.CarOwnerId);
+
+                entity.Property(e => e.CarOwnerId)
+                      .ValueGeneratedNever();
+            });
 
             builder.Entity<Users>(L => L.Property(u => u.LicenseNumber)
                         .IsRequired());
             builder.Entity<Users>()
                 .HasOne(u => u.customer)
-                .WithOne(c => c.Users)
-                .HasForeignKey<Customer>(c => c.UserId);
-
+                .WithOne(c => c.User)
+                .HasForeignKey<Customer>(c => c.CustomerId)
+                 .OnDelete(DeleteBehavior.Cascade);
             builder.Entity<Users>()
                .HasOne(u => u.carOwner)
-               .WithOne(c => c.Users)
-               .HasForeignKey<CarOwner>(c => c.UserId);
+               .WithOne(c => c.User)
+               .HasForeignKey<CarOwner>(c => c.CarOwnerId)
+                .OnDelete(DeleteBehavior.Cascade);
 
             builder.Entity<Users>()
-              .HasOne(u => u.Admin)
-              .WithOne(c => c.Users)
-              .HasForeignKey<Admin>(c => c.UserId);
+               .HasOne(u => u.Admin)
+               .WithOne(c => c.User)
+               .HasForeignKey<Admin>(c => c.AdminId)
+               .OnDelete(DeleteBehavior.Cascade);
+
+         
 
             builder.Entity<Car>()
                 .HasOne(c => c.Owner)
                 .WithMany(co => co.Cars)
-                .HasForeignKey(c => c.OwnerId)
+                .HasForeignKey(c => c.CarOwnerId)
                 .OnDelete(DeleteBehavior.Restrict); 
 
             builder.Entity<Car>()
@@ -105,9 +131,39 @@ namespace Car_rental_system.Data
                    .HasForeignKey(c => c.PlanId)
                    .OnDelete(DeleteBehavior.Restrict);
 
+            builder.Entity<Reservation>()
+         .Property(c => c.Status)
+           .HasConversion<string>();
+
+            builder.Entity<Reservation>()
+           .HasOne(cI => cI.Car)
+           .WithMany(c => c.Reservtions)
+          .HasForeignKey(cI => cI.CarId)
+           .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Entity<Reservation>()
+          .HasOne(cI => cI.Customer)
+          .WithMany(c => c.Reservations)
+         .HasForeignKey(cI => cI.CustomerId)
+          .OnDelete(DeleteBehavior.Restrict);
+
+
+            builder.Entity<Reservation>()
+             .HasOne(cI => cI.Admin)
+              .WithMany(c => c.Reservations)
+               .HasForeignKey(cI => cI.AdminId)
+                 .OnDelete(DeleteBehavior.Restrict);
+
+
+
+
+
+
+
+
 
         }
-       
+
 
     }
 }

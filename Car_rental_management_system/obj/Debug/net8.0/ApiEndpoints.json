@@ -1,22 +1,6 @@
 [
   {
     "ContainingType": "Car_rental_management_system.Controllers.CarsController",
-    "Method": "CheckAvailability",
-    "RelativePath": "api/Cars/CheckAvailability{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Car_rental_management_system.Controllers.CarsController",
     "Method": "Create",
     "RelativePath": "api/Cars/create",
     "HttpMethod": "POST",
@@ -54,18 +38,13 @@
         "IsRequired": false
       },
       {
-        "Name": "OwnerId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "AdminId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
         "Name": "PlanId",
         "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Describtion",
+        "Type": "System.String",
         "IsRequired": false
       },
       {
@@ -234,6 +213,38 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "Car_rental_management_system.Controllers.ReservationController",
+    "Method": "CreateReservation",
+    "RelativePath": "api/Reservation/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Car_rental_management_system.DTOs.ReservationDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Car_rental_management_system.Controllers.ReservationController",
+    "Method": "GetReservationByID",
+    "RelativePath": "api/Reservation/GetReservation/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "Car_rental_management_system.Controllers.IdentityUserEndpoint",

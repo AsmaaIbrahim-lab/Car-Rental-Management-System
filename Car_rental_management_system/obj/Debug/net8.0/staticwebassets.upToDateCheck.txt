@@ -62,3 +62,8 @@ wwwroot\carImages\01d8b080-7ca5-4731-8f0f-899254876aeb.jpg
 wwwroot\carImages\75b35dd1-0eb0-4bc6-8623-5a4500151dd7.jpg
 wwwroot\carImages\771f175f-3391-4861-b0cb-509c75f33ac9.jpg
 wwwroot\carImages\bacdc1b9-41b5-47b2-b38a-ea51d5e7fc6d.jpg
+wwwroot\carImages\fa04d5d6-e374-4a8c-86e2-3949faa9a5c4.jpg
+wwwroot\carImages\5b16f886-8f4e-4ae0-89f2-09e945d604ae.jpg
+wwwroot\carImages\32704001-d47d-41f8-90b6-56c9a240d3ca.jpg
+wwwroot\carImages\f6f33114-5ae5-4419-ab15-b9f61023bfb0.jpg
+wwwroot\carImages\1cdc43c9-410b-4fc6-a8f4-554b3d30c208.jpg

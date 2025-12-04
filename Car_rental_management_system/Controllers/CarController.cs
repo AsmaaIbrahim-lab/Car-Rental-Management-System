@@ -2,11 +2,14 @@
 using Car_rental_management_system.Enum;
 using Car_rental_management_system.Models;
 using Car_rental_system.Data;
+using Car_rental_system.Enum;
 using Car_rental_system.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Client;
+using System.Text.RegularExpressions;
 using static System.Net.Mime.MediaTypeNames;
 namespace Car_rental_management_system.Controllers
 {
@@ -23,11 +26,49 @@ namespace Car_rental_management_system.Controllers
             _db = db;
         }
 
+        [Authorize(Roles = "CarOwner")]
         [HttpPost("create")]
         public async Task<IActionResult> Create([FromForm] CarCreateDto dto)
         {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
+            
+            var errors = new List<string>();
+
+            if (!System.Enum.IsDefined(typeof(CarStatus), dto.Status))
+                errors.Add("Status is required and must be a valid value.");
+
+            if (string.IsNullOrWhiteSpace(dto.Model))
+                errors.Add("Model is required.");
+            else if (dto.Model.Length < 2 || dto.Model.Length > 50)
+                errors.Add("Model must be between 2 and 50 characters.");
+
+            if (string.IsNullOrWhiteSpace(dto.Number))
+                errors.Add("Number is required.");
+            
+
+            if (string.IsNullOrWhiteSpace(dto.Color))
+                errors.Add("Color is required.");
+            else if (!Regex.IsMatch(dto.Color, @"^[A-Za-z]{3,20}$"))
+                errors.Add("Color must contain only letters and be 3–20 characters long.");
+            if (!System.Enum.IsDefined(typeof(ImageType), dto.ImageType))
+                errors.Add("Invalid image type.");
+
+
+            if (string.IsNullOrWhiteSpace(dto.Location))
+                errors.Add("Location is required.");
+
+            if (dto.PlanId != null)
+            {
+                var planExists = await _db.Plans.AnyAsync(p => p.PlanId == dto.PlanId);
+                if (!planExists)
+                    errors.Add("Invalid PlanId.");
+            }
+
+            if (errors.Any())
+                return BadRequest(new { Errors = errors });
+            var userId = User.FindFirst("UserID")?.Value;
+            var admin = await _db.Users.FirstOrDefaultAsync(u => u.Role == Role.Admin);
+
+            var adminId = admin?.Id;
 
             var car = new Car
             {
@@ -37,8 +78,9 @@ namespace Car_rental_management_system.Controllers
                 Color = dto.Color,
                 Location = dto.Location,
                 Type = dto.Type,
-                OwnerId = dto.OwnerId,
-                AdminId = dto.AdminId,
+                Description=dto.Describtion,
+                CarOwnerId = userId,
+                AdminId = adminId,
                 PlanId = dto.PlanId,
                 
 
@@ -88,8 +130,6 @@ namespace Car_rental_management_system.Controllers
                 car.Status,
                 car.Color,
                 car.Location,
-                car.OwnerId,
-                car.AdminId,
                 car.PlanId,
               
                 Images = car.CarImages.Select(i => new {

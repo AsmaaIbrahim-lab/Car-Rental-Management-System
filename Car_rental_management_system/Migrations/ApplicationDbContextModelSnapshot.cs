@@ -33,8 +33,11 @@ namespace Car_rental_management_system.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CarId"));
 
-                    b.Property<int?>("AdminId")
-                        .HasColumnType("int");
+                    b.Property<string>("AdminId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("CarOwnerId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Color")
                         .IsRequired()
@@ -59,9 +62,6 @@ namespace Car_rental_management_system.Migrations
                         .HasMaxLength(15)
                         .HasColumnType("nvarchar(15)");
 
-                    b.Property<int>("OwnerId")
-                        .HasColumnType("int");
-
                     b.Property<int?>("PlanId")
                         .HasColumnType("int");
 
@@ -77,7 +77,7 @@ namespace Car_rental_management_system.Migrations
 
                     b.HasIndex("AdminId");
 
-                    b.HasIndex("OwnerId");
+                    b.HasIndex("CarOwnerId");
 
                     b.HasIndex("PlanId");
 
@@ -124,62 +124,89 @@ namespace Car_rental_management_system.Migrations
                     b.ToTable("Plans");
                 });
 
-            modelBuilder.Entity("Car_rental_system.Models.Admin", b =>
+            modelBuilder.Entity("Car_rental_management_system.Models.Reservation", b =>
                 {
-                    b.Property<int>("AdminId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AdminId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("UserId")
+                    b.Property<string>("AdminId")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.HasKey("AdminId");
+                    b.Property<int>("CarId")
+                        .HasColumnType("int");
 
-                    b.HasIndex("UserId")
-                        .IsUnique();
+                    b.Property<string>("CustomerId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("DropoffLocation")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("Final_amount")
+                        .HasColumnType("float");
+
+                    b.Property<DateOnly>("PickupEndDate")
+                        .HasColumnType("date");
+
+                    b.Property<TimeOnly>("PickupEndTime")
+                        .HasColumnType("time");
+
+                    b.Property<string>("PickupLocation")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateOnly>("PickupStartDate")
+                        .HasColumnType("date");
+
+                    b.Property<TimeOnly>("PickupStartTime")
+                        .HasColumnType("time");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AdminId");
+
+                    b.HasIndex("CarId");
+
+                    b.HasIndex("CustomerId");
+
+                    b.ToTable("Reservations");
+                });
+
+            modelBuilder.Entity("Car_rental_system.Models.Admin", b =>
+                {
+                    b.Property<string>("AdminId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("AdminId");
 
                     b.ToTable("Admins");
                 });
 
             modelBuilder.Entity("Car_rental_system.Models.CarOwner", b =>
                 {
-                    b.Property<int>("CarOwnerId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CarOwnerId"));
-
-                    b.Property<string>("UserId")
-                        .IsRequired()
+                    b.Property<string>("CarOwnerId")
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("CarOwnerId");
-
-                    b.HasIndex("UserId")
-                        .IsUnique();
 
                     b.ToTable("carOwners");
                 });
 
             modelBuilder.Entity("Car_rental_system.Models.Customer", b =>
                 {
-                    b.Property<int>("CustomerId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CustomerId"));
-
-                    b.Property<string>("UserId")
-                        .IsRequired()
+                    b.Property<string>("CustomerId")
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("CustomerId");
-
-                    b.HasIndex("UserId")
-                        .IsUnique();
 
                     b.ToTable("customers");
                 });
@@ -220,8 +247,7 @@ namespace Car_rental_management_system.Migrations
 
                     b.Property<string>("LicenseNumber")
                         .IsRequired()
-                        .HasMaxLength(8)
-                        .HasColumnType("nvarchar(8)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("LicenseType")
                         .IsRequired()
@@ -428,9 +454,8 @@ namespace Car_rental_management_system.Migrations
 
                     b.HasOne("Car_rental_system.Models.CarOwner", "Owner")
                         .WithMany("Cars")
-                        .HasForeignKey("OwnerId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .HasForeignKey("CarOwnerId")
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("Car_rental_management_system.Models.PricingPlan", "Plan")
                         .WithMany("Cars")
@@ -455,37 +480,64 @@ namespace Car_rental_management_system.Migrations
                     b.Navigation("Car");
                 });
 
+            modelBuilder.Entity("Car_rental_management_system.Models.Reservation", b =>
+                {
+                    b.HasOne("Car_rental_system.Models.Admin", "Admin")
+                        .WithMany("Reservations")
+                        .HasForeignKey("AdminId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Car_rental_management_system.Models.Car", "Car")
+                        .WithMany("Reservtions")
+                        .HasForeignKey("CarId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Car_rental_system.Models.Customer", "Customer")
+                        .WithMany("Reservations")
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Admin");
+
+                    b.Navigation("Car");
+
+                    b.Navigation("Customer");
+                });
+
             modelBuilder.Entity("Car_rental_system.Models.Admin", b =>
                 {
-                    b.HasOne("Car_rental_system.Models.Users", "Users")
+                    b.HasOne("Car_rental_system.Models.Users", "User")
                         .WithOne("Admin")
-                        .HasForeignKey("Car_rental_system.Models.Admin", "UserId")
+                        .HasForeignKey("Car_rental_system.Models.Admin", "AdminId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Users");
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Car_rental_system.Models.CarOwner", b =>
                 {
-                    b.HasOne("Car_rental_system.Models.Users", "Users")
+                    b.HasOne("Car_rental_system.Models.Users", "User")
                         .WithOne("carOwner")
-                        .HasForeignKey("Car_rental_system.Models.CarOwner", "UserId")
+                        .HasForeignKey("Car_rental_system.Models.CarOwner", "CarOwnerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Users");
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Car_rental_system.Models.Customer", b =>
                 {
-                    b.HasOne("Car_rental_system.Models.Users", "Users")
+                    b.HasOne("Car_rental_system.Models.Users", "User")
                         .WithOne("customer")
-                        .HasForeignKey("Car_rental_system.Models.Customer", "UserId")
+                        .HasForeignKey("Car_rental_system.Models.Customer", "CustomerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Users");
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -542,6 +594,8 @@ namespace Car_rental_management_system.Migrations
             modelBuilder.Entity("Car_rental_management_system.Models.Car", b =>
                 {
                     b.Navigation("CarImages");
+
+                    b.Navigation("Reservtions");
                 });
 
             modelBuilder.Entity("Car_rental_management_system.Models.PricingPlan", b =>
@@ -552,11 +606,18 @@ namespace Car_rental_management_system.Migrations
             modelBuilder.Entity("Car_rental_system.Models.Admin", b =>
                 {
                     b.Navigation("Cars");
+
+                    b.Navigation("Reservations");
                 });
 
             modelBuilder.Entity("Car_rental_system.Models.CarOwner", b =>
                 {
                     b.Navigation("Cars");
+                });
+
+            modelBuilder.Entity("Car_rental_system.Models.Customer", b =>
+                {
+                    b.Navigation("Reservations");
                 });
 
             modelBuilder.Entity("Car_rental_system.Models.Users", b =>

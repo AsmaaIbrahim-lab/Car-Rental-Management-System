@@ -6,10 +6,11 @@ namespace Car_rental_system.Models
     public class Admin
     {
         [Key]
-        public  int AdminId { get; set; }
-        public string UserId { get; set; }
-        public virtual Users Users { get; set; }
-        public virtual ICollection<Car> Cars { get; set; }
+        public string AdminId { get; set; }
+
+        public virtual Users User { get; set; }
+        public virtual List<Car> Cars { get; set; }
+        public virtual List<Reservation> Reservations { get; set; }
 
     }
 }

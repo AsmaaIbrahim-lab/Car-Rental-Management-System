@@ -20,11 +20,8 @@ namespace Car_rental_management_system.DTOs
         public string Location { get; set; }
         public string Type { get; set; }
 
-        public int OwnerId { get; set; }
-
-        public int AdminId { get; set; }
-
         public int PlanId { get; set; }
+        public string Describtion { get; set; }
 
 
         public List<IFormFile> Images { get; set; }

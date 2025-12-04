@@ -2,6 +2,6 @@
 {
     public enum plan_type
     {
-        Hourly,Daily,Weekly,Monthly
+        Hourly,Daily
     }
 }

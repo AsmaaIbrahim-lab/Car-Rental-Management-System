@@ -394,17 +394,12 @@
                   "Type": {
                     "type": "string"
                   },
-                  "OwnerId": {
-                    "type": "integer",
-                    "format": "int32"
-                  },
-                  "AdminId": {
-                    "type": "integer",
-                    "format": "int32"
-                  },
                   "PlanId": {
                     "type": "integer",
                     "format": "int32"
+                  },
+                  "Describtion": {
+                    "type": "string"
                   },
                   "Images": {
                     "type": "array",
@@ -437,13 +432,10 @@
                 "Type": {
                   "style": "form"
                 },
-                "OwnerId": {
-                  "style": "form"
-                },
-                "AdminId": {
-                  "style": "form"
-                },
                 "PlanId": {
+                  "style": "form"
+                },
+                "Describtion": {
                   "style": "form"
                 },
                 "Images": {
@@ -650,29 +642,6 @@
         }
       }
     },
-    "/api/Cars/CheckAvailability{id}": {
-      "get": {
-        "tags": [
-          "Cars"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/api/SignUp": {
       "post": {
         "tags": [
@@ -699,6 +668,60 @@
       "post": {
         "tags": [
           "IdentityUserEndpoint"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Reservation/create": {
+      "post": {
+        "tags": [
+          "Reservation"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReservationDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReservationDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReservationDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Reservation/GetReservation/{id}": {
+      "get": {
+        "tags": [
+          "Reservation"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
         ],
         "responses": {
           "200": {
@@ -1048,6 +1071,40 @@
         "type": "object",
         "properties": {
           "email": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ReservationDto": {
+        "type": "object",
+        "properties": {
+          "pickupStartDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "pickupEndDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "pickupStartTime": {
+            "type": "string",
+            "format": "time"
+          },
+          "pickupEndTime": {
+            "type": "string",
+            "format": "time"
+          },
+          "carId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pickupLocation": {
+            "type": "string",
+            "nullable": true
+          },
+          "dropoffLocation": {
             "type": "string",
             "nullable": true
           }

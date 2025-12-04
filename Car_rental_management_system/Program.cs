@@ -4,6 +4,7 @@ using Car_rental_system.Data;
 using Car_rental_system.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using System.Text.Json.Serialization;
 
@@ -16,7 +17,11 @@ namespace Car_rental_management_system
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddControllers().AddJsonOptions(options =>
             {
-                options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+              options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+            //    //options.JsonSerializerOptions.Converters.Add(new TimeOnlyJsonConverter());
+            //    //options.JsonSerializerOptions.Converters.Add(new DateOnlyJsonConverter());
+
+
             });
 
 
